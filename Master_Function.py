@@ -125,7 +125,7 @@ def get_quotes(time_frame, year = 2005, month = 1, day = 1, asset = "EURUSD"):
     timezone = pytz.timezone("Europe/Paris")
     
     utc_from = datetime.datetime(year, month, day, tzinfo = timezone)
-    utc_to = datetime.datetime(now.year, now.month, now.day, tzinfo = timezone)
+    utc_to = datetime.datetime(now.year, now.month, now.day + 1, tzinfo = timezone)
     
     rates = mt5.copy_rates_range(asset, time_frame, utc_from, utc_to)
     
